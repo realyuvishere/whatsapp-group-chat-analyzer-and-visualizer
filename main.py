@@ -1,8 +1,7 @@
 import re
+from config import MAIN_IN_FILE, MAIN_OUT_FILE
 
-filename = '_chat.txt'
-
-f = open(f"./data/{filename}")
+f = open(f"./data/{MAIN_IN_FILE}")
 
 data = list()
 content = f.readlines()
@@ -25,6 +24,6 @@ for line in content:
 
 
 print(f"Number of messages: {message_count}")
-out = open('./output/output.csv', 'w')
+out = open(f'./output/{MAIN_OUT_FILE}', 'w')
 out.write('\n'.join([','.join(headers)] + data))
 out.close()
